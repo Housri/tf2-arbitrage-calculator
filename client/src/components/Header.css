@@ -1,0 +1,96 @@
+.header {
+  background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
+  border-bottom: 2px solid #ffd700;
+  padding: 20px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 2.5rem;
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-section h1 {
+  color: #ffd700;
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.tagline {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 300;
+}
+
+.info-section {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.exchange-rate {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid #ffd700;
+  border-radius: 5px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rate-label {
+  color: #888;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.rate-value {
+  color: #ffd700;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .info-section {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
