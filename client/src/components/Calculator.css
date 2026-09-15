@@ -13,6 +13,74 @@
   font-size: 1.5rem;
 }
 
+/* Buyback Settings Section */
+.buyback-settings {
+  background: #252d3d;
+  border: 1px solid #3a4455;
+  border-left: 3px solid #3b82f6;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.buyback-info {
+  flex: 1;
+}
+
+.buyback-info label {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.buyback-description {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.buyback-input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e2633;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  min-width: 150px;
+}
+
+.buyback-percentage-input {
+  background: transparent;
+  border: none;
+  color: #3b82f6;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 80px;
+  text-align: center;
+  padding: 0;
+}
+
+.buyback-percentage-input:focus {
+  outline: none;
+  color: #60a5fa;
+}
+
+.percentage-symbol {
+  color: #3b82f6;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -49,10 +117,224 @@
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.15);
 }
 
+/* Auto-calculated field styling */
+.form-group.auto-calculated input {
+  background: #1a1f2e;
+  border-color: #3b82f6;
+  cursor: default;
+}
+
+.form-group.auto-calculated input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.15);
+}
+
+.auto-calculated-input {
+  position: relative;
+}
+
+.auto-badge {
+  position: absolute;
+  top: -22px;
+  right: 0;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.auto-hint {
+  color: #3b82f6;
+  font-size: 0.75rem;
+  margin-top: 5px;
+  display: block;
+}
+
 .button-group {
   display: flex;
   gap: 10px;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #0f1419;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.button-group button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.button-group button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.history-button {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa) !important;
+  color: white !important;
+}
+
+/* History Section */
+.history-section {
+  background: #252d3d;
+  border: 1px solid #3a4455;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 25px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.history-header h3 {
+  color: #ffd700;
+  margin: 0;
+}
+
+.clear-all-button {
+  background: linear-gradient(135deg, #ef4444, #f87171) !important;
+  color: white !important;
+  padding: 8px 15px !important;
+  font-size: 0.85rem !important;
+}
+
+.clear-all-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4) !important;
+}
+
+.history-empty {
+  text-align: center;
+  color: #888;
+  padding: 30px 20px;
+  font-style: italic;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  background: #1e2633;
+  border: 1px solid #3a4455;
+  border-radius: 6px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.history-item:hover {
+  border-color: #ffd700;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1);
+}
+
+.history-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.history-item-info h4 {
+  color: #ffd700;
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+
+.history-timestamp {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.history-profit {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.history-profit.profitable {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+}
+
+.history-profit.loss {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.history-item-details {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.history-item-details span {
+  background: #252d3d;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #3a4455;
+}
+
+.history-item-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.load-button, .delete-button {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.load-button {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: white;
+}
+
+.load-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.delete-button {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+}
+
+.delete-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
 }
 
 .results {
@@ -119,4 +401,51 @@
   font-size: 0.75rem;
   font-weight: 600;
   margin-left: 10px;
+}
+
+.error {
+  color: #ef4444;
+}
+
+/* Scrollbar styling for history section */
+.history-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.history-section::-webkit-scrollbar-track {
+  background: #1e2633;
+  border-radius: 4px;
+}
+
+.history-section::-webkit-scrollbar-thumb {
+  background: #3a4455;
+  border-radius: 4px;
+}
+
+.history-section::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
+}
+
+@media (max-width: 768px) {
+  .buyback-settings {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  .history-item-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .history-item-details {
+    flex-direction: column;
+  }
 }
